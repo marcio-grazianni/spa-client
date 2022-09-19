@@ -1,6 +1,8 @@
-import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const ContactSuccess = () => {
+  const location = useLocation();
+  const { userId } = location.state;
   return (
     <div className="flex-1 flex flex-col">
       <h1 className="text-[#652293] border-[#652293] border-b text-center py-3 text-xl font-medium ">
@@ -8,12 +10,13 @@ const ContactSuccess = () => {
       </h1>
 
       <div className="max-w-[380px] w-full mx-auto py-2.5 md:py-6 px-5 space-y-3">
-        <button
+        <Link
+          to={`/schedulling/${userId}`}
           type="button"
-          className="bg-[#652293] w-full  text-[#ffffff] py-2.5 font-bold hover:bg-transparent border border-[#652293] duration-500 hover:text-[#652293]"
+          className="bg-[#652293] w-full text-center  text-[#ffffff] py-2.5 font-bold hover:bg-transparent border border-[#652293] duration-500 hover:text-[#652293]"
         >
           Book Appointment
-        </button>
+        </Link>
         <button
           type="button"
           className="bg-[#652293] w-full  text-[#ffffff] py-2.5 font-bold hover:bg-transparent border border-[#652293] duration-500 hover:text-[#652293]"

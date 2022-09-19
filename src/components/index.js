@@ -3,4 +3,8 @@ export { default as Header } from "./Header";
 // Contact
 export { default as Form } from "./Contact/Form";
 
+export { default as MenuList } from "./Menu/MenuList";
+
+export { default as Loader } from "./Loader";
+
 export { default as Footer } from "./Footer";

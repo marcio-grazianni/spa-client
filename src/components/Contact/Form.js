@@ -16,7 +16,8 @@ const Form = () => {
   } = useForm();
   // Holds the selected type on button click
   const [type, setType] = useState("");
-
+  
+  // Holds State about the loading when the request is hapening to the server
   const [loading, setLoading] = useState(false);
 
   // Calls On submiting the form
@@ -25,7 +26,7 @@ const Form = () => {
     try {
       setLoading(true);
       // Make POST req to the server and destructure status from the response
-      const { status } = await makePostRequest(INBOUND, {
+      const { status, data } = await makePostRequest(INBOUND, {
         name,
         phone,
         email,
@@ -34,7 +35,11 @@ const Form = () => {
       // If data successfully inserted into the database
       if (status === 200) {
         // Navigate to the contact success screen
-        navigate("/contactsuccess");
+        navigate("/contactsuccess", {
+          state: {
+            userId: data._id,
+          },
+        });
       }
     } catch (err) {
       console.log(err);

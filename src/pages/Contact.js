@@ -14,12 +14,6 @@ const Contact = () => {
           </h2>
         </div>
         <Form />
-
-        {/* <div className="bg-[#ffffff] rounded-t-3xl rounded-br-3xl rounded-bl-md px-4 py-20">
-          <h1 className="font-semibold text-left text-[#652293] text-2xl">
-            You're all set! We just sent you a message to confirm your request.
-          </h1>
-        </div> */}
         <p className="text-center max-w-[300px] mx-auto text-sm font-medium text-[#652293] mt-2">
           Messaging & data rates may apply. Use is subject to term
         </p>
