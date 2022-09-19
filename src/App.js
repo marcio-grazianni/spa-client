@@ -6,6 +6,8 @@ import Location from "./pages/Location";
 import Menu from "./pages/Menu";
 import Slots from "./pages/Slots";
 
+import "./App.css";
+
 function App() {
   return (
     <div className="min-h-screen bg-[#E4E9Ef] flex flex-col justify-between">

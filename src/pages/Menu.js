@@ -26,7 +26,11 @@ const Menu = () => {
         try {
           setLoading(true);
           const { status, data } = await makeGetRequest(
-            `${APPOINTMENT_SLOTS}?location=${locationId}&appointment_type=${selectedMenuItems.type}&insurance_option=${selectedMenuItems.option}`
+            `${APPOINTMENT_SLOTS}?location=${locationId}&appointment_type=${
+              selectedMenuItems.type
+            }&insurance_option=${
+              selectedMenuItems.option
+            }&date=${new Date().toDateString()}`
           );
 
           // If got response OK then move to the slots screens
@@ -38,6 +42,11 @@ const Menu = () => {
             });
           }
         } catch (err) {
+          navigate(`/schedulling/${locationId}/slots`, {
+            state: {
+              slotsData: [],
+            },
+          });
         } finally {
           setLoading(false);
         }
