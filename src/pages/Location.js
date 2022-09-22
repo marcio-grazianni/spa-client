@@ -13,8 +13,6 @@ const Location = () => {
   const navigate = useNavigate();
   const { user } = useParams();
 
-  console.log(user);
-
   // Holds the array of Locations that will comes from the backend
   const [locations, setLocations] = useState([]);
   //   Holds the loading state for that time the request is happening to the server

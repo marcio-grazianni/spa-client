@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Loader, MenuList } from "../components";
 import { makeGetRequest } from "../http/API";
 import { APPOINTMENT_SLOTS } from "../http/Costants";
@@ -7,6 +7,8 @@ import { APPOINTMENT_SLOTS } from "../http/Costants";
 const Menu = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { user } = useParams();
+
   const { appointmentTypes, insuranceOptions, locationId } = location.state;
 
   // Holds State about the loading when the request is hapening to the server
@@ -35,9 +37,12 @@ const Menu = () => {
 
           // If got response OK then move to the slots screens
           if (status === 200) {
-            navigate(`/schedulling/${locationId}/slots`, {
+            navigate(`/schedulling/${user}/slots`, {
               state: {
                 slotsData: data,
+                appointmentTypes: selectedMenuItems.type,
+                insuranceOptions: selectedMenuItems.option,
+                locationId,
               },
             });
           }
@@ -54,7 +59,14 @@ const Menu = () => {
     };
 
     fetchAppointmentSlots();
-  }, [selectedMenuItems, locationId, navigate]);
+  }, [
+    selectedMenuItems,
+    locationId,
+    appointmentTypes,
+    insuranceOptions,
+    user,
+    navigate,
+  ]);
 
   return (
     <div className="flex-1 flex flex-col">

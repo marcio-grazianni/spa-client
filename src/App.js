@@ -7,6 +7,7 @@ import Menu from "./pages/Menu";
 import Slots from "./pages/Slots";
 
 import "./App.css";
+import SlotBook from "./pages/SlotBook";
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
             <Route exact path="/schedulling/:user" element={<Location />} />
             <Route exact path="/schedulling/:user/menu" element={<Menu />} />
             <Route exact path="/schedulling/:user/slots" element={<Slots />} />
+            <Route
+              exact
+              path="/schedulling/:user/slotbook"
+              element={<SlotBook />}
+            />
           </Routes>
         </BrowserRouter>
       </div>
