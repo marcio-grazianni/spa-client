@@ -16,7 +16,6 @@ const SlotItem = ({
       ? setSlotsList(dataArray.slice(0, 3))
       : setSlotsList(dataArray);
   }, [dataArray]);
-
   return (
     <div>
       {slotsList?.map(({ _id, status, time }) => (
@@ -27,7 +26,9 @@ const SlotItem = ({
               setReqData({ providername, slotTime: time });
             }
           }}
-          className={`${selectedSlotTime === time && "border-[cyan]"} ${
+          className={`${
+            selectedSlotTime === time && "bg-[#d80b6d] border-[#d80b6d]"
+          } ${
             status === "available" &&
             "bg-[#652293] border-[#652293] text-[#ffffff]"
           } ${

@@ -16,7 +16,7 @@ const Form = () => {
   } = useForm();
   // Holds the selected type on button click
   const [type, setType] = useState("");
-  
+
   // Holds State about the loading when the request is hapening to the server
   const [loading, setLoading] = useState(false);
 
@@ -49,7 +49,7 @@ const Form = () => {
   };
   return (
     <form className="space-y-3">
-      <div className="bg-[#ffffff] text-[#652293] px-6 py-2.5 md:py-5 rounded-t-3xl rounded-bl-3xl space-y-3">
+      <div className="ml-6 bg-[#ffffff] text-[#652293] px-6 py-2.5 md:py-5 rounded-t-3xl rounded-bl-3xl space-y-3">
         <div>
           <label className="font-bold text-base">Name*</label>
           <input
@@ -95,31 +95,32 @@ const Form = () => {
         </div>
         <p className="text-[red] text-sm">{errors.email?.message}</p>
       </div>
-
-      <button
-        type="button"
-        onFocus={() => {
-          setType("appointment");
-        }}
-        onClick={handleSubmit(submitHandler)}
-        className={`${
-          loading && "opacity-50"
-        } bg-[#652293] w-full  text-[#ffffff] py-2.5 font-bold hover:bg-transparent border border-[#652293] duration-500 hover:text-[#652293]`}
-      >
-        Book Appointment
-      </button>
-      <button
-        type="button"
-        onFocus={() => {
-          setType("message");
-        }}
-        onClick={handleSubmit(submitHandler)}
-        className={`${
-          loading && "opacity-50"
-        } bg-[#652293] w-full  text-[#ffffff] py-2.5 font-bold hover:bg-transparent border border-[#652293] duration-500 hover:text-[#652293]`}
-      >
-        Start Chat
-      </button>
+      <div className="mx-6 space-y-2">
+        <button
+          type="button"
+          onFocus={() => {
+            setType("appointment");
+          }}
+          onClick={handleSubmit(submitHandler)}
+          className={`${
+            loading && "opacity-50"
+          } bg-[#652293] w-full   text-[#ffffff] py-2.5 font-bold hover:bg-transparent border border-[#652293] duration-500 hover:text-[#652293]`}
+        >
+          Book Appointment
+        </button>
+        <button
+          type="button"
+          onFocus={() => {
+            setType("message");
+          }}
+          onClick={handleSubmit(submitHandler)}
+          className={`${
+            loading && "opacity-50"
+          } bg-[#652293] w-full  text-[#ffffff] py-2.5 font-bold hover:bg-transparent border border-[#652293] duration-500 hover:text-[#652293]`}
+        >
+          Start Chat
+        </button>
+      </div>
     </form>
   );
 };

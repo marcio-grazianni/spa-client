@@ -9,7 +9,7 @@ const ContactSuccess = () => {
         Provider/practice name Name
       </h1>
 
-      <div className="max-w-[380px] w-full mx-auto py-2.5 md:py-6 px-5 space-y-3">
+      <div className="max-w-[350px] flex-1 w-full mx-auto py-2.5 md:py-6 px-5 space-y-3">
         <Link
           to={`/schedulling/${userId}`}
           type="button"
@@ -24,12 +24,12 @@ const ContactSuccess = () => {
           Start Chat
         </button>
 
-        <div className="bg-[#ffffff] rounded-t-3xl rounded-br-3xl rounded-bl-md px-4 py-20">
-          <h1 className="font-semibold text-left text-[#652293] text-2xl">
+        <div className="bg-[#E4E9EF] rounded-t-3xl rounded-br-3xl rounded-bl-md px-4 py-20">
+          <h1 className="font-bold text-left text-[#652293] text-2xl">
             You're all set! We just sent you a message to confirm your request.
           </h1>
         </div>
-        <p className="text-center max-w-[300px] mx-auto text-sm font-medium text-[#652293] mt-2">
+        <p className="text-center max-w-[300px] absolute bottom-20 mx-auto text-sm font-medium text-[#652293] mt-2">
           Messaging & data rates may apply. Use is subject to term
         </p>
       </div>

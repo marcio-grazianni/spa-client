@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import SlotItem from "./SlotItem";
 
 const SlotsList = ({
@@ -8,12 +8,20 @@ const SlotsList = ({
   noOfDays,
   selectedSlotTime = "",
   setReqData = () => {},
+  dates,
 }) => {
   // Holds the array of data of the slots of each month
   const [slotsDataTransformed, setSlotsDataTransformed] = useState([]);
+  useLayoutEffect(() => {
+    divRef?.current?.scrollTo({
+      top: 0,
+      left: dates.indexOf(date.toLocaleDateString()) * 112,
+      behavior: "smooth",
+    });
+  }, [date, divRef, slotsDataTransformed, dates]);
 
   //  Transform database response
-  useEffect(() => {
+  useLayoutEffect(() => {
     let arr = [];
 
     const validate = (time, number) => {
@@ -23,13 +31,13 @@ const SlotsList = ({
     };
 
     for (let i = 0; i < noOfDays; i++) {
-      const number = i + 1;
+      const number = new Date(dates[i]).getDay() + 1;
       const response = data.slots.filter((data) => validate(data.time, number));
       arr.push(response);
     }
     setSlotsDataTransformed(arr);
   }, [noOfDays, data.slots, date]);
-
+  console.log();
   return (
     <div className="rounded-t-3xl rounded-br-3xl bg-[#ffffff] py-4 px-8 ">
       <div className="flex flex-col space-y-5 md:space-y-0 md:flex-row">
@@ -54,7 +62,7 @@ const SlotsList = ({
         <div className="md:w-[55%] overflow-y-auto noScrollbar relative">
           <div
             ref={divRef}
-            className=" flex overflow-auto space-x-3 noScrollbar"
+            className=" flex overflow-hidden space-x-3 noScrollbar"
           >
             {slotsDataTransformed.map((dataArray, index) => (
               <div className="min-w-[100px]" key={index}>

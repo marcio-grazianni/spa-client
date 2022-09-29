@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Loader, MenuList } from "../components";
 import { makeGetRequest } from "../http/API";
-import { APPOINTMENT_SLOTS } from "../http/Costants";
+import {
+  APPOINTMENT_SLOTS,
+} from "../http/Costants";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -68,6 +70,10 @@ const Menu = () => {
     navigate,
   ]);
 
+  // Runs When User click on Back button
+  const backHandler = async () => {
+    navigate(`/schedulling/${user}`);
+  };
   return (
     <div className="flex-1 flex flex-col">
       <h1 className="text-[#652293] border-[#652293] border-b text-center py-3 text-3xl font-semibold">
@@ -77,7 +83,7 @@ const Menu = () => {
         <Loader />
       ) : (
         <div className="max-w-7xl mx-auto my-4 ">
-          <div className="bg-[#ffffff] rounded-t-3xl rounded-br-3xl px-10 py-4 space-y-6">
+          <div className="bg-[#ffffff] rounded-t-3xl rounded-br-3xl mx-6 px-10 py-4 space-y-6">
             <MenuList
               type={"type"}
               setSelectedMenuItems={setSelectedMenuItems}
@@ -92,6 +98,18 @@ const Menu = () => {
               heading="Choose your insurance"
               menuList={insuranceOptions.result}
             />
+          </div>
+
+          <div className="flex mt-3 justify-center">
+            <button
+              disabled={loading}
+              onClick={() => {
+                backHandler(locationId);
+              }}
+              className="py-2 px-20 bg-[#652293] text-[#ffffff] font-semibold"
+            >
+              Back
+            </button>
           </div>
         </div>
       )}

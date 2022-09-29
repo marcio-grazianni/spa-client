@@ -11,9 +11,9 @@ import SlotBook from "./pages/SlotBook";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#E4E9Ef] flex flex-col justify-between">
+    <div className="min-h-screen bg-[#f5f5f5] flex flex-col justify-between">
       <Header />
-      <div className="justify-self-start flex-1	">
+      <div className="justify-self-start flex-1 flex  items-stretch	">
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Contact />} />
