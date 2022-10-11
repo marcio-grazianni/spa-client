@@ -1,0 +1,2 @@
+/*Base Static Folder*/
+@base: "https://sv-static-staging.s3.amazonaws.com/";

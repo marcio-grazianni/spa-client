@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="31px" height="97px" viewBox="0 0 31 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>Arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Message-Seal" transform="translate(-627.000000, -379.000000)" stroke="#656565" stroke-width="3">
+            <g id="Seal-1" transform="translate(232.000000, 117.000000)">
+                <g id="Preview-Section" transform="translate(0.000000, 93.000000)">
+                    <g id="Browser-Window" transform="translate(0.000000, 0.652463)">
+                        <g id="Arrow" transform="translate(395.000000, 170.000000)">
+                            <path d="M10.2881979,0.614113785 C10.2881979,0.614113785 29.4362246,1.43516752 29.4362246,40.0353282 C29.4362246,78.6354889 3.75036762,89.1775326 3.75036762,89.1775326" id="Path-2"></path>
+                            <g id="Point" transform="translate(11.491619, 84.821729) rotate(11.000000) translate(-11.491619, -84.821729) translate(2.491619, 75.821729)" stroke-linecap="square">
+                                <path d="M1.05713342,0.360548693 L1.05713342,16.2410713" id="Line"></path>
+                                <path d="M9.51420077,8.29261994 L9.51420077,24.1731426" id="Line-Copy" transform="translate(9.514201, 16.224691) rotate(-90.000000) translate(-9.514201, -16.224691) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

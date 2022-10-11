@@ -1,0 +1,2 @@
+/*Base Static Folder*/
+@base: "https://sv-static-production.s3.amazonaws.com/";
