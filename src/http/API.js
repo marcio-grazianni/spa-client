@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://spa-server.up.railway.app/",
+  baseURL: "https://spa-backend-production.up.railway.app/",
 });
 
 export const makePostRequest = async (subURL, data) => {
