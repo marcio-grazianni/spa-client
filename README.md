@@ -3,7 +3,7 @@ ap-client
 
 This repository contains the front-end code for the appointpal application.
 
-### Before you install
+### Before you install 
 
 This project uses node v8.6.0 and npm v5.3.0 for bundling JavaScript and CSS
 
@@ -11,7 +11,7 @@ Make sure you have these versions installed, or use nvm to set your local enviro
 
 ### Building the static assets
 
-1. Clone the repository
+1. Clone the repository.
 2. Run `npm install`
 3. Create a `variables.less` file in the `./less` directory.  (You can simply copy one of the templates.)
 4. Run `gulp buildLess` to compile the CSS (outputs to `./css/build`)
