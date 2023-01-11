@@ -1,4 +1,4 @@
-ap-client.
+ap-client
 ======
 
 This repository contains the front-end code for the appointpal application.
